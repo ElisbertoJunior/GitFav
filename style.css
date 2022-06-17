@@ -122,10 +122,9 @@ table .no-favorites {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: .5rem;
   height: 50vh;
-  width: 165%;
- 
+  width: 170%;
 }
 
 

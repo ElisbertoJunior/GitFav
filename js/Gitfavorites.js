@@ -81,8 +81,12 @@ export class GitfavoritesView extends Gitfavorites {
         const empytRow = document.createElement('tr')
         empytRow.innerHTML = ` 
           <td class="no-favorites">
+           <div>
             <img src="./assets/Star.svg" alt="Imagem de uma estrela sorridente">
+           </div
+           <div>
             <img src="./assets/Favorites.svg" alt="Nenhum favorito ainda">
+           </div
           </td>
       
           `
