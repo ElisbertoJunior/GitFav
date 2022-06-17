@@ -42,6 +42,6 @@
 # DEMO 
 
 <h1 align="center">
-    <img src="./assets/GitFav.gif">
+    <img src="./assets/Gitfav.gif">
     
 </h1>
