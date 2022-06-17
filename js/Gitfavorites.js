@@ -29,7 +29,7 @@ export class Gitfavorites {
 
     const user = await GithubUser.searchUser(username)
     
-    if(user === undefined) { 
+    if(user.login === undefined) { 
       throw new Error(`Usuário ${username} não encontrado!`)
     }
 
@@ -45,7 +45,8 @@ export class Gitfavorites {
 }
 
 delete(user) {
-  const filteredEntries = this.entries.filter(entry => entry.login !== user.login)
+  const filteredEntries = this.entries
+  .filter(entry => entry.login !== user.login)
 
   this.entries = filteredEntries
   this.update()
@@ -134,24 +135,24 @@ export class GitfavoritesView extends Gitfavorites {
     const tr = document.createElement('tr')
 
     tr.innerHTML = `
-        <td>
-        <div class="user">
-          <img src="https://Github.com/ElisbertoJunior.png" alt="Imagem de Elisberto Junior">
-          <a href="https://Github.com/ElisbertoJunior" target="_blank">
-            <p>Elisberto Junior</p>
-            <span>/ElisbertoJunior</span>
-          </a>
-        </div>
-        </td>
-        <td class="repositories">
-            25
-        </td>
-        <td class="followers">
-            5
-        </td>
-        <td>
-            <button class="remove">Remover</button>
-         </td>
+    <td>
+    <div class="user">
+      <img src="https://Github.com/ElisbertoJunior.png" alt="Imagem de Elisberto Junior">
+      <a href="https://Github.com/ElisbertoJunior" target="_blank">
+        <p>Elisberto Junior</p>
+        <span>/ElisbertoJunior</span>
+      </a>
+    </div>
+    </td>
+    <td class="repositories">
+        25
+    </td>
+    <td class="followers">
+        5
+    </td>
+    <td>
+        <button class="remove">Remover</button>
+     </td>
     `
     
     return tr
