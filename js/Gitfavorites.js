@@ -10,8 +10,6 @@ export class Gitfavorites {
   load() {
     this.entries = JSON.parse(localStorage.getItem('@git-fav:')) || []
 
-    console.log(this.entries)
-   
   }
 
   save() {
@@ -75,9 +73,31 @@ export class GitfavoritesView extends Gitfavorites {
     }
   }
 
+  noFavorites() {
+
+      if(this.entries.length == 0) {
+        this.removeAll()
+
+        const empytRow = document.createElement('tr')
+        empytRow.innerHTML = ` 
+          <td class="no-favorites">
+            <img src="./assets/Star.svg" alt="Imagem de uma estrela sorridente">
+            <img src="./assets/Favorites.svg" alt="Nenhum favorito ainda">
+          </td>
+      
+          `
+
+      this.tbody.append(empytRow)
+      
+    }
+  }
+
+
+
   update() {
-   
     this.removeAll()
+
+    this.noFavorites()
 
     this.entries.forEach(user => {
       const row = this.createRow()
@@ -92,12 +112,11 @@ export class GitfavoritesView extends Gitfavorites {
 
       row.querySelector('.remove').onclick = () => {this.delete(user)}
         
-      
-
       this.tbody.append(row)
+      
     })
 
-    
+  
   }
 
   removeAll() {

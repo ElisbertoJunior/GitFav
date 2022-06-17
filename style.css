@@ -114,6 +114,21 @@ table thead th:last-child {
 }
 
 
+table .no-favorites {
+  height: 62rem;
+}
+
+.no-favorites {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: 50vh;
+  width: 165%;
+ 
+}
+
+
 table tbody td{
   padding: 2.4rem 4rem;
   text-align: left;
